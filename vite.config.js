@@ -1,4 +1,4 @@
-import * as path from "path";
+// import * as path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
@@ -6,7 +6,14 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }]
+    // alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }]
+    alias: {
+      // Add your alias configurations here
+      "@": "/src",
+      "@components": "/src/components",
+      "@utils": "/src/utils"
+      // ...
+    }
   },
   loader: { ".js": "jsx" }
 });
