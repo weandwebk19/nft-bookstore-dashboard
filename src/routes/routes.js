@@ -21,7 +21,7 @@ const publicRoutes = [
 ];
 // private Routes
 const privateRoutes = [
-  // { path: "/home/*", component: Home },
+  // { path: "/dashboard/*", component: Dashboard }
   // { path: "/group/*", component: Group },
   // { path: "/presentation/*", component: Presentation },
   // { path: "/presentation-management/*", component: PresentationManagement },

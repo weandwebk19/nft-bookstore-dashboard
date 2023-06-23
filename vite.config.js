@@ -11,7 +11,10 @@ export default defineConfig({
       // Add your alias configurations here
       "@": "/src",
       "@components": "/src/components",
-      "@utils": "/src/utils"
+      "@utils": "/src/utils",
+      "@hooks": "/src/hooks",
+      "@contexts": "/src/contexts",
+      "@styles": "/src/styles"
       // ...
     }
   },
