@@ -16,19 +16,19 @@ const register = async (user) => {
 
 const login = async (user) => {
   try {
-    const res = await axios.post("auth/login", user);
+    const res = await axios.post("/auth/login", user);
 
     if (res.status === 200) {
       TokenService.setUser(res.data);
       return {
         success: true,
         message: "successfully login! 🤗",
-        user: res.data,
+        user: res.data
       };
     } else {
       return {
         success: false,
-        message: res.message,
+        message: res.message
       };
     }
   } catch (err) {
@@ -37,19 +37,19 @@ const login = async (user) => {
     if (err.response !== undefined) {
       return {
         success: false,
-        message: err.response.data.message,
+        message: err.response.data.message
       };
     }
     return {
       success: false,
-      message: err.message,
+      message: err.message
     };
   }
 };
 
 const oAuthLogin = async (user) => {
   try {
-    const res = await axios.post("auth/oauth/login", user);
+    const res = await axios.post("/auth/oauth/login", user);
     if (res.status === 200) {
       if (res.data.accessToken) {
         TokenService.setUser(res.data);
@@ -58,14 +58,14 @@ const oAuthLogin = async (user) => {
         success: true,
         message: "successfully login! 🤗",
         user: res.data,
-        isRegisterd: true,
+        isRegisterd: true
       };
     } else {
       return {
         success: false,
         message: res.message,
         user,
-        isRegisterd: false,
+        isRegisterd: false
       };
     }
   } catch (err) {
@@ -77,14 +77,14 @@ const oAuthLogin = async (user) => {
         success: false,
         message: err.response.data.message,
         user,
-        isRegisterd: false,
+        isRegisterd: false
       };
     }
     return {
       success: false,
       message: err.message,
       user,
-      isRegisterd: false,
+      isRegisterd: false
     };
   }
 };
@@ -97,12 +97,12 @@ const logout = async () => {
     if (res.status === 200) {
       return {
         success: true,
-        message: res.data,
+        message: res.data
       };
     } else {
       return {
         success: false,
-        message: res.data,
+        message: res.data
       };
     }
   } catch (err) {
@@ -110,12 +110,12 @@ const logout = async () => {
     if (err.response !== undefined) {
       return {
         success: false,
-        message: err.response.data.message,
+        message: err.response.data.message
       };
     }
     return {
       success: false,
-      message: err.message,
+      message: err.message
     };
   }
 };
@@ -146,12 +146,12 @@ const anonymousLogin = async (user) => {
       return {
         success: true,
         message: "successfully login! 🤗",
-        user: res.data,
+        user: res.data
       };
     } else {
       return {
         success: false,
-        message: res.message,
+        message: res.message
       };
     }
   } catch (err) {
@@ -160,12 +160,12 @@ const anonymousLogin = async (user) => {
     if (err.response !== undefined) {
       return {
         success: false,
-        message: err.response.data.message,
+        message: err.response.data.message
       };
     }
     return {
       success: false,
-      message: err.message,
+      message: err.message
     };
   }
 };
@@ -177,7 +177,7 @@ const AuthService = {
   logout,
   getCurrentUser,
   isLoggedIn,
-  anonymousLogin,
+  anonymousLogin
 };
 
 export default AuthService;

@@ -19,7 +19,7 @@ import TokenService from "./tokenService";
 export const createAxiosJWT = () => {
   const newInstance = axios.create({
     withCredentials: true,
-    baseURL: `${config.SERVER_URL}`,
+    baseURL: `${config.SERVER_URL}`
   });
   newInstance.interceptors.request.use(
     async (config) => {
@@ -35,16 +35,17 @@ export const createAxiosJWT = () => {
 };
 
 export const createAxios = () => {
+  console.log(config.SERVER_URL);
   const instance = axios.create({
     withCredentials: true,
-    baseURL: `${config.SERVER_URL}`,
+    baseURL: `${config.SERVER_URL}`
   });
   return instance;
 };
 
 export const createAxiosDefault = () => {
   const instance = axios.create({
-    baseURL: `${config.SERVER_URL}`,
+    baseURL: `${config.SERVER_URL}`
   });
   return instance;
 };

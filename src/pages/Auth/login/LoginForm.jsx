@@ -17,7 +17,7 @@ import {
 
 import { login } from "@/redux/actions/auth";
 
-import GoogleAuthButton from "./GoogleAuthButton";
+// import GoogleAuthButton from "./GoogleAuthButton";
 
 const LoginForm = () => {
   const [isError, setIsError] = useState("");
@@ -37,7 +37,7 @@ const LoginForm = () => {
         // setMessage(res.message);
         setIsError(false);
         setTimeout(() => {
-          navigate("/home");
+          navigate("/dashboard");
         }, 1000);
       } else {
         // setMessage(res.message);
@@ -164,21 +164,21 @@ const LoginForm = () => {
                       </div>
                     ) : null}
                   </Grid>
-                  <Grid item>
+                  {/* <Grid item>
                     <Link href="/reset-password" variant="body2">
                       forgot password?
                     </Link>
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Grid>
             </Grid>
             <Button type="submit" fullWidth variant="primary" sx={{ mt: 6 }}>
               Log In
             </Button>
-            <Typography sx={{ mt: 4, mb: 4, textAlign: "center" }}>
+            {/* <Typography sx={{ mt: 4, mb: 4, textAlign: "center" }}>
               or
-            </Typography>
-            <GoogleAuthButton />
+            </Typography> */}
+            {/* <GoogleAuthButton /> */}
             <Grid
               container
               justifyContent="flex-end"
