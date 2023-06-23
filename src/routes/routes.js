@@ -1,3 +1,4 @@
+import Dashboard from "../pages/Dashboard";
 import Confirmation from "../pages/Auth/confirmation";
 import Login from "../pages/Auth/login";
 // import Register from "../pages/Auth/register";
@@ -15,11 +16,12 @@ const publicRoutes = [
   // { path: "/register/*", component: Register },
   { path: "/login/*", component: Login },
   { path: "/reset-password/*", component: ResetPassword },
-  { path: "/confirmation/*", component: Confirmation }
+  { path: "/confirmation/*", component: Confirmation },
+  { path: "/dashboard", component: Dashboard }
 ];
 // private Routes
 const privateRoutes = [
-  // { path: "/home/*", component: Home },
+  // { path: "/dashboard/*", component: Dashboard }
   // { path: "/group/*", component: Group },
   // { path: "/presentation/*", component: Presentation },
   // { path: "/presentation-management/*", component: PresentationManagement },
